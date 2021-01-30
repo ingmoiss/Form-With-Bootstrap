@@ -16,77 +16,114 @@
             <div class="card-header">
                 <h1 class="fs-4">Payment for example</h1>
             </div>
-            <form>
-
+            <form id="from">
                 <div class="row mt-3 ms-1 me-1">
                     <div class="col form-group">
-                        <label for="exampleInputEmail1">Card #</label>
-                        <input type="email" class="form-control" placeholder="XXXXXXXXXXXX">
+                        <div id="inputInvalid">
+                            <label>Card #</label>
+                            <input type="text" maxlength="12" class="form-control" id="validationCard" placeholder="XXXX-XXXX-XXXX" required>
+                            <div class="invalid-feedback">
+                                Incorrect format! Enter only numbers.
+                            </div>
+                        </div>
                     </div>
-                    <div class="col-3 form-group">
-                        <label for="exampleInputEmail1">CVC #</label>
-                        <input type="email" class="form-control" placeholder="XXXXXXXXXXXX">
+                    <div class="col-2 form-group">
+                        <label>CVC #</label>
+                        <input type="text" maxlength="3" class="form-control" id="validationCVC" placeholder="XXX" required>
+                        <div class="invalid-feedback">
+                            Incorrect!
+                        </div>
                     </div>
-                    <div class="col-3 form-group">
+                    <div class="col-2 form-group">
                         <label>Amount #</label>
-                        <input type="email" class="form-control" placeholder="XXXXXXXXXXXX">
+                        <input type="text" class="form-control" id="validationAmo" placeholder="XXXXXX">
+                        <div class="invalid-feedback">
+                            Incorrect!
+                        </div>
                     </div>
                 </div>
                 <div class="row ms-1 me-1">
                     <div class="col form-group">
                         <label>First Name</label>
-                        <input class="form-control" type="text" placeholder="First Name" />
+                        <input type="text" class="form-control" id="validationFirts" placeholder="First Name" />
+                         <div class="invalid-feedback">
+                            Empty field!
+                        </div>
                     </div>
                     <div class="col form-group">
                         <label>Last Name</label>
-                        <input class="form-control" type="text" placeholder="Last Name" />
+                        <input type="text" class="form-control" id="validationLast" placeholder="Last Name" />
+                         <div class="invalid-feedback">
+                            Empty field!
+                        </div>
                     </div>
                 </div>
                 <div class="row ms-1 me-1">
                     <div class="col-6 form-group">
                         <label>City</label>
-                        <input class="form-control" type="text" placeholder="City" />
+                        <input type="text" class="form-control" id="validationCity" placeholder="City" />
+                        <div class="invalid-feedback">
+                            Empty field!
+                        </div>
                     </div>
                     <div class="col form-group">
                         <label>State</label>
                         <select class="form-select" id="exampleSt">
                             <option selected>Choose...</option>
-                            <option value="1">One</option>
-                            <option value="2">Two</option>
-                            <option value="3">Three</option>
+                            <option value="1">San José</option>
+                            <option value="2">Cartago</option>
+                            <option value="3">Limón</option>
+                            <option value="3">Guanacaste</option>
+                            <option value="3">Herredia</option>
                         </select>
                     </div>
                     <div class="col form-group">
                         <label>Postal Code</label>
-                        <input class="form-control" type="text" placeholder="Postal code" />
+                        <input type="text"  class="form-control" id="validationPostal" placeholder="Postal code" />
+                        <div class="invalid-feedback">
+                            Incorrect value!
+                        </div>
                     </div>
                 </div>
                 <div class="row mb-3 ms-1 me-1">
-                    <div class="col form-group">
+                    <div class="col-3 form-group">
                         <label>We Accept:</label>
-                        <div class="bg-secondary rounded" height="3px">
-                            <input type="radio" name="radioButton" value="MasterCard" />
+                        <div class="bg-secondary rounded py-1 d-flex justify-content-center" id="validationRadio">
+                            <div class="m-auto form-check">
+                            <input type="radio" class="form-check-input" name="radioButton" value="MasterCard" />
                             <i class="fab fa-cc-visa"></i>
-                            <input type="radio" name="radioButton" value="Visa" />
+                            </div>
+                            <div class="m-auto form-check">
+                            <input type="radio" class="form-check-input" name="radioButton" value="Visa" />
                             <i class="fab fa-cc-mastercard"></i>
-                            <input type="radio" name="radioButton" value="Coin" />
+                            </div>
+                            <div class="m-auto form-check">
+                            <input type="radio" class="form-check-input" name="radioButton" value="Coin" />
                             <i class="fas fa-coins"></i>
-                            <input type="radio" name="radioButton" value="Card" />
+                            </div>
+                            <div class="m-auto form-check">
+                            <input type="radio" class="form-check-input"  name="radioButton" value="Card" />
                             <i class="far fa-credit-card"></i>
+                            </div>
                         </div>
+                        <div class="invalid-feedback">Check one option!</div>
                     </div>
-                    <div class="col form-group">
+                    <div class="col-6 ms-auto form-group">
                         <label>Message</label>
                         <textarea class="form-control" name="Text" cols="60" rows="4"></textarea>
                     </div>
                 </div>
             </form>
-            <div class="card-footer">
-                <input class="btn btn-primary" type="button" value="Cancel">
-                <input class="btn btn-primary" type="button" value="Send">
+            <div class="card-footer ps-auto">
+                <div class="ms-auto">
+                    <input class="btn btn-primary" id="cancel-button" type="button" value="Cancel">
+                    <input class="btn btn-primary" id="submit-button" type="submit" value="Send">
+                </div>
             </div>
         </div>
     </div>
+    <script type="text/javascript" src="./main.js"></script>
 </body>
+
 
 </html>
